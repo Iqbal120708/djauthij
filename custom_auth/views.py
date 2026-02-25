@@ -7,6 +7,7 @@ from .models import OTPVerifications
 from django.db import transaction
 from django.contrib import messages
 from django.utils.timezone import now
+from django.contrib.auth.decorators import login_required
 
 UserModel = get_user_model()
 
@@ -69,3 +70,6 @@ def verify_otp(request):
             })
             
     return render(request, 'registration/otp_form.html')
+    
+def profile(request):
+    return render(request, "registration/profile.html")
