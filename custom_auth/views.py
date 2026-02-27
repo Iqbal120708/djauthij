@@ -70,6 +70,7 @@ def verify_otp(request):
             })
             
     return render(request, 'registration/otp_form.html')
-    
+   
+@login_required 
 def profile(request):
     return render(request, "registration/profile.html")
